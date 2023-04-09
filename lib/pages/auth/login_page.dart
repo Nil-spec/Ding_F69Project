@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
               borderRadius: BorderRadius.circular(50),
               color: Color(0xff31274F)),
           child: Center(
-            child: customText("Giris Yap", CustomColors.loginButtonTextColor),
+            child: customText("Giriş Yap", CustomColors.loginButtonTextColor),
           ),
         ),
       ),
@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
       child: TextButton(
         onPressed: () => Navigator.pushNamed(context, "/signUp"),
         child: customText(
-          "Hesap Olustur",
+          "Hesap Oluştur",
           CustomColors.textButtonColor,
         ),
       ),
