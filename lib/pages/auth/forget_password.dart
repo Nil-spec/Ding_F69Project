@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/pages/auth/login_page.dart';
 import 'package:flutter_ui/utils/customColors.dart';
 import 'package:flutter_ui/utils/customTextStyle.dart';
 
@@ -64,7 +65,7 @@ class _forgetState extends State<forget> {
 
   Text titleText() {
     return Text(
-      "Merhaba, \nHosgeldin",
+      "Merhaba, \nHoşgeldin",
       style: CustomTextStyle.titleTextStyle,
     );
   }
@@ -87,33 +88,27 @@ class _forgetState extends State<forget> {
   Center forgetButton() {
     return Center(
       child: TextButton(
-        onPressed: signIn,
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                "Şifre sıfırlama bilgileriniz mail adresinize gönderilmiştir.",
+              ),
+            ),
+          );
+          Future.delayed(Duration(seconds: 2), () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
+          });
+        },
         child: customText(
           "Şifremi Sıfırla",
           CustomColors.textButtonColor,
         ),
       ),
     );
-  }
-
-  void signIn() async {
-    if (formkey.currentState!.validate()) {
-      formkey.currentState!.save();
-      try {
-        var userResult = await firebaseAuth.createUserWithEmailAndPassword(
-            email: email, password: password);
-        formkey.currentState!.reset();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-                "Şifre sıfırlama bilgileri mail adresinize gönderildi"),
-          ),
-        );
-        Navigator.pushReplacementNamed(context, "/loginPage");
-      } catch (e) {
-        print(e.toString());
-      }
-    } else {}
   }
 
   Center backToLoginPage() {
