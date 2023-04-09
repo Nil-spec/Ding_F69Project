@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "758028942830",
+    "project_id": "calismalogin03",
+    "storage_bucket": "calismalogin03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758028942830:android:feb4cbf7af88fee74ea2ff",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758028942830-bued3q6aucfa45ighloihpntn5g5kusp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYaYXaG3jEDQ7Mvxwnno3Tb7Qs7OdBTuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758028942830-bued3q6aucfa45ighloihpntn5g5kusp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
