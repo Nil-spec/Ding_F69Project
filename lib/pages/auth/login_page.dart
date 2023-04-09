@@ -6,10 +6,6 @@ import 'package:flutter_ui/utils/customTextStyle.dart';
 import 'package:flutter_ui/widgets/custom_text_button.dart';
 import 'forget_password.dart';
 
-import '../../service/auth_service.dart';
-import '../../utils/customTextStyle.dart';
-import '../../widgets/custom_text_button.dart';
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
