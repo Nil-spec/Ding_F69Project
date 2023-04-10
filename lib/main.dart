@@ -1,11 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_ui/pages/auth/login_page.dart';
 import 'package:flutter_ui/pages/auth/sign_up.dart';
 import 'package:flutter_ui/utils/customColors.dart';
 import 'firebase_options.dart';
 import 'pages/home_page.dart';
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
