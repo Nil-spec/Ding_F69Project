@@ -19,7 +19,7 @@ void main() async {
     name: 'calismalogin2',
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(OnBoardingScreen());
+  runApp(calismalogin2());
 }
 
 class BottomNavBar extends StatefulWidget {
@@ -55,9 +55,7 @@ class calismalogin2 extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: CustomColors.scaffoldBackgroundColor,
       ),
-      home: Scaffold(
-        body: LoginPage(),
-      ),
+      home: OnBoardingScreen()
     );
   }
 }

@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Ad"),
     );
   }
@@ -93,7 +93,7 @@ class _SignUpState extends State<SignUp> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Soyad"),
     );
   }
@@ -108,7 +108,7 @@ class _SignUpState extends State<SignUp> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Email"),
     );
   }
@@ -124,7 +124,7 @@ class _SignUpState extends State<SignUp> {
         password = value!;
       },
       obscureText: true,
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Şifre"),
     );
   }

@@ -78,7 +78,7 @@ class _forgetState extends State<forget> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Email"),
     );
   }

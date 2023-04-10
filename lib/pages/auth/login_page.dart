@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Email"),
     );
   }
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
         password = value!;
       },
       obscureText: true,
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.purple),
       decoration: customInputDecoration("Şifre"),
     );
   }
