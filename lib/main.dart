@@ -7,6 +7,8 @@ import 'package:flutter_ui/pages/auth/sign_up.dart';
 import 'package:flutter_ui/utils/customColors.dart';
 import 'firebase_options.dart';
 import 'pages/home_page.dart';
+import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 FlutterLocalNotificationsPlugin();
@@ -18,6 +20,22 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(calismalogin2());
+}
+
+class BottomNavBar extends StatefulWidget {
+  @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _page = 2;
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
 }
 
 class calismalogin2 extends StatelessWidget {

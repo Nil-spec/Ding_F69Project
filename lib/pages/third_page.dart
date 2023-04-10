@@ -193,7 +193,7 @@ class _ThirdPageState extends State<ThirdPage> {
                                         );
                                       });
                                     },
-                                    icon: Icon(Icons.alarm),
+                                    icon: Icon(Icons.alarm, color: Colors.white, size: 50,),
                                   ),
                                 ),
                               ],
@@ -297,7 +297,7 @@ class _ThirdPageState extends State<ThirdPage> {
       },
       icon: Padding(
         padding: const EdgeInsets.only(left: 8.0),
-        child: Icon(Icons.analytics_outlined, size: 50,),
+        child: Icon(Icons.analytics_outlined, size: 50,color: Colors.white,),
       ),
     );
   }

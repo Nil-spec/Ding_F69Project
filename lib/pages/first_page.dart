@@ -67,7 +67,7 @@ class _FirstPageState extends State<FirstPage> {
                         'ozkayagkhn@gmail.com',
                         style: TextStyle(
                           fontSize: 18.0,
-                          color: Colors.grey[700],
+                          color: Colors.white,
                         ),
                       ),
                       SizedBox(width: 8.0),
@@ -81,28 +81,31 @@ class _FirstPageState extends State<FirstPage> {
                 ],
               ),
             ),
-            SizedBox(height: 32.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-                child: Text(
-                  'Çıkış Yap',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                  child: Text(
+                    'Çıkış Yap',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFF9F7AEA),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFF9F7AEA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
                 ),
               ),
             ),
