@@ -42,9 +42,7 @@ class Temel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        title: Text("Zaman Yönetimi"),
-      ),
+
       body: Zaman(),
     );
   }
@@ -58,57 +56,74 @@ class Zaman extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 20),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-
-            Expanded(
-              child: Padding (
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                child:
-                ElevatedButton(
-                  onPressed:(){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder:(context)=> EisenhowerMatrisi(),
-                    ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    foregroundColor: Colors.white,
-
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EisenhowerMatrisi()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purple[200],
+                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Text("EISENHOWER MATRİSİ"),
+                  elevation: 5,
+                ),
+                child: Text(
+                  "EISENHOWER MATRİSİ",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
+                  ),
                 ),
               ),
             ),
-            SizedBox(width: 10),
-
-            Expanded(
-              child:Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                  child:    ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Pomodoro(),),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-
-                    ),
-                    child: Text("POMODORO TEKNİĞİ"),
-                  )
+          ),
+          SizedBox(height: 10),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Pomodoro()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurple[200],
+                  onPrimary: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  elevation: 5,
+                ),
+                child: Text(
+                  "POMODORO TEKNİĞİ",
+                  style: TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
               ),
             ),
-          ]
+          ),
+        ],
       ),
     );
-
-
   }
-
 }
+
+
+
+
 class EisenhowerMatrisi extends StatefulWidget {
   const EisenhowerMatrisi({Key? key}) : super(key: key);
 

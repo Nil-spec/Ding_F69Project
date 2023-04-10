@@ -25,7 +25,7 @@ class _ThirdPageState extends State<ThirdPage> {
   void initState() {
     super.initState();
     scrollController =
-        ScrollController(initialScrollOffset: (360) * (selectedMonth - 1));
+        ScrollController(initialScrollOffset: (272) * (selectedMonth - 1));
     Noti.initialize(flutterLocalNotificationsPlugin);
     _startTimer();
   }
@@ -57,9 +57,9 @@ class _ThirdPageState extends State<ThirdPage> {
               shape: BoxShape.circle,
               border: Border.all(
                 width: 2,
-                color: isChecked ? Colors.blue : Colors.grey.shade400,
+                color: isChecked ? Colors.purple : Colors.grey.shade400,
               ),
-              color: isChecked ? Colors.blue : Colors.transparent,
+              color: isChecked ? Colors.purple : Colors.transparent,
             ),
             child: Padding(
               padding: const EdgeInsets.all(2.0),
@@ -109,7 +109,51 @@ class _ThirdPageState extends State<ThirdPage> {
                 Text(
                   'Merhaba Gökhan',
                   textScaleFactor: 2,
+
                 ),
+                TextButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Colors.white),
+                  onPressed: () {
+                    int checkedCount = 0;
+                    List<Gorev> selectedGorevler = gorevveri1.getGorevlerForMonth(
+                        selectedMonth);
+                    selectedGorevler.forEach((gorev) {
+                      if (gorev.tamamlandiMi) checkedCount++;
+                    });
+
+                    DateTime now = DateTime.now();
+                    DateTime endOfMonth = DateTime(now.year, now.month + 1, 0);
+                    DateTime tenDaysBeforeEndOfMonth = endOfMonth.subtract(
+                        Duration(days: 10));
+                    DateTime fiveDaysBeforeEndOfMonth = endOfMonth.subtract(
+                        Duration(days: 5));
+
+                    if (now.isBefore(tenDaysBeforeEndOfMonth)) {
+                      Noti.showBigTextNotification(
+                          title: 'HEY BURSİYER',
+                          body:
+                          '${gorevveri1.aylar[now
+                              .month]} aynın $checkedCount tanesini tamamladın, geriye ${selectedGorevler
+                              .length} görevin kaldı\nHaydi rehavete kapılam ve devam et',
+                          fln: flutterLocalNotificationsPlugin);
+                    }
+                    if (now.isBefore(fiveDaysBeforeEndOfMonth)) {
+                      Noti.showBigTextNotification(
+                          title: 'HEY BURSİYER',
+                          body:
+                          '${gorevveri1.aylar[now
+                              .month]} aynın $checkedCount tanesini tamamladın, geriye ${selectedGorevler
+                              .length} görevin kaldı\nHaydi rehavete kapılam ve devam et',
+                          fln: flutterLocalNotificationsPlugin);
+                    }
+                  },
+                  child: Text('a'),
+                ),
+                TextButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Colors.white),
+                    onPressed: (){
+                  alarms.clear();
+                }, child:Text('b') ),
               ],
             ),
           ),
@@ -136,7 +180,7 @@ class _ThirdPageState extends State<ThirdPage> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              Colors.blue,
+                              Colors.purple,
                               Colors.white10,
                             ],
                             begin: Alignment.topLeft,
@@ -219,46 +263,7 @@ class _ThirdPageState extends State<ThirdPage> {
           ),
           Row(
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  int checkedCount = 0;
-                  List<Gorev> selectedGorevler = gorevveri1.getGorevlerForMonth(
-                      selectedMonth);
-                  selectedGorevler.forEach((gorev) {
-                    if (gorev.tamamlandiMi) checkedCount++;
-                  });
 
-                  DateTime now = DateTime.now();
-                  DateTime endOfMonth = DateTime(now.year, now.month + 1, 0);
-                  DateTime tenDaysBeforeEndOfMonth = endOfMonth.subtract(
-                      Duration(days: 10));
-                  DateTime fiveDaysBeforeEndOfMonth = endOfMonth.subtract(
-                      Duration(days: 5));
-
-                  if (now.isBefore(tenDaysBeforeEndOfMonth)) {
-                    Noti.showBigTextNotification(
-                        title: 'HEY BURSİYER',
-                        body:
-                        '${gorevveri1.aylar[now
-                            .month]} aynın $checkedCount tanesini tamamladın, geriye ${selectedGorevler
-                            .length} görevin kaldı\nHaydi rehavete kapılam ve devam et',
-                        fln: flutterLocalNotificationsPlugin);
-                  }
-                  if (now.isBefore(fiveDaysBeforeEndOfMonth)) {
-                    Noti.showBigTextNotification(
-                        title: 'HEY BURSİYER',
-                        body:
-                        '${gorevveri1.aylar[now
-                            .month]} aynın $checkedCount tanesini tamamladın, geriye ${selectedGorevler
-                            .length} görevin kaldı\nHaydi rehavete kapılam ve devam et',
-                        fln: flutterLocalNotificationsPlugin);
-                  }
-                },
-                child: Text('Bildirim yolla'),
-              ),
-              ElevatedButton(onPressed: (){
-                alarms.clear();
-              }, child:Text('Listes Sil') ),
             ],
           ),
         ],

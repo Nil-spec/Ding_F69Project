@@ -49,11 +49,8 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Yapışkan Notlar'),
-        centerTitle: true,
-      ),
       body: Container(
+        padding: EdgeInsets.only(top: 40),
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(8.0),

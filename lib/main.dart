@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_ui/pages/auth/login_page.dart';
 import 'package:flutter_ui/pages/auth/sign_up.dart';
+import 'package:flutter_ui/pages/onboarding.dart';
 import 'package:flutter_ui/utils/customColors.dart';
 import 'firebase_options.dart';
 import 'pages/home_page.dart';
-import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -19,7 +19,7 @@ void main() async {
     name: 'calismalogin2',
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(calismalogin2());
+  runApp(OnBoardingScreen());
 }
 
 class BottomNavBar extends StatefulWidget {
